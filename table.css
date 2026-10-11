@@ -1,0 +1,239 @@
+:root {
+    --black: #0d1012;
+    --glass: rgba(28, 34, 37, 0.78);
+    --line: rgba(255, 255, 255, 0.3);
+    --gold: #d9a85f;
+    --white: #f5f3ed;
+    --soft: #b8c0c0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background:
+        linear-gradient(rgba(9, 12, 14, 0.62), rgba(9, 12, 14, 0.78)),
+        url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2200&q=85")
+        center / cover fixed;
+    color: var(--white);
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    padding: 38px 20px;
+}
+
+.page {
+    max-width: 900px;
+    width: 100%;
+}
+
+.site-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.brand,
+.back-link {
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.back-link {
+    color: var(--gold);
+}
+
+.gallery-card {
+    backdrop-filter: blur(14px);
+    background: var(--glass);
+    border: 1px solid var(--line);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+    padding: 14px;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+caption {
+    background: rgba(11, 14, 16, 0.88);
+    border: 1px solid var(--line);
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.35rem, 4vw, 2.35rem);
+    letter-spacing: 0.05em;
+    padding: 22px 12px;
+    margin: 0;
+}
+
+th,
+td {
+    border: 1px solid var(--line);
+    padding: 0 !important;
+    margin: 0;
+    vertical-align: bottom;
+    font-size: 0;
+    line-height: 0;
+    height: 1px;
+}
+
+th {
+    height: 0;
+    border: none;
+    visibility: hidden;
+}
+
+.poster {
+    background: #171b1d;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 168px;
+    object-fit: cover;
+    transition: filter 0.25s ease, transform 0.25s ease;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 0;
+    vertical-align: bottom;
+}
+
+.poster:hover img {
+    filter: brightness(1.16);
+    transform: scale(1.04);
+}
+
+.poster:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.poster-label {
+    background: rgba(10, 12, 13, 0.82);
+    bottom: 0;
+    color: var(--white);
+    font-size: 0.6rem;
+    left: 0;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    padding: 5px 7px;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+td.feature-cell .poster img {
+    min-height: 348px;
+}
+
+td > table {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.nested-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.nested-table td {
+    padding: 0 !important;
+    margin: 0;
+    vertical-align: bottom;
+    line-height: 0;
+    font-size: 0;
+    border: 1px solid var(--line);
+    height: 1px;
+}
+
+.nested-table .poster,
+.nested-table .poster img {
+    min-height: 0;
+    height: 100%;
+}
+
+.nested-table .poster img {
+    min-height: 96px;
+}
+
+.note {
+    color: var(--soft);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    margin: 18px 2px 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 20px 8px;
+    }
+
+    .gallery-card {
+        padding: 7px;
+    }
+
+    caption {
+        padding: 15px 8px;
+    }
+
+    .poster img {
+        min-height: 100px;
+    }
+
+    td.feature-cell .poster img {
+        min-height: 202px;
+    }
+
+    .nested-table .poster img {
+        min-height: 55px;
+    }
+
+    .poster-label {
+        display: none;
+    }
+}
